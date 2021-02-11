@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="col-md-8">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 text-right">
+        <button class="btn btn-danger" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+<div class="pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <header>
+          <button type="button" class="btn btn-md btn-info" (click)="btnAdd()">Create New Data</button>
+        </header>
+      </div>
+    </div>
+    <table class="table table-hover table-bordered mt-2">
+      <tr class="bg-primary text-white">
+        <th>Request Id</th>
+        <th>Request Type</th>
+        <th>Request Desc</th>
+        <th>Request Date</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let req of reqData">
+        <td class="text-right">{{ req.id }}</td>
+        <td>{{ req.req_type_ar }}</td>
+        <td>{{ req.req_desc }}</td>
+        <td>{{ req.req_date | date: 'dd-MM-yyyy' }}</td>
+        <td>{{ req.status }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="btnEdit(req.id)">Edit</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,141 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Test Project</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user/dashboard">Dashboard</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="pt-5">
+  <div class="container">
+    <form class="p-5 mt-3 border">
+      <input type="hidden" name="editId" [(ngModel)]="editId">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="reqType">Request type : </label>
+        </div>
+        <div class="col-md-9">
+            <label>{{reqTypeList}}</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="reqDesc">Request Description</label>
+        </div>
+        <div class="col-md-9">
+          <textarea [(ngModel)]="reqDesc" readonly
+            class="form-control"
+            name="reqDesc"
+            placeholder="Request Description"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="city">City</label>
+        </div>
+        <div class="col-md-9">
+          <input [(ngModel)]="city" readonly
+            type="text"
+            class="form-control"
+            name="city"
+            placeholder="City Name"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="state">State</label>
+        </div>
+        <div class="col-md-9">
+          <select class="form-control" name="state" [(ngModel)]="state" readonly>
+            <option value="">Select</option>
+            <option value="1">Odisha</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="pin_code">Pin Code</label>
+        </div>
+        <div class="col-md-9">
+          <input [(ngModel)]="pinCode" readonly
+            type="text"
+            class="form-control"
+            name="pin_code"
+            placeholder="Area Pincode"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="count_no">Alternate Phone No.</label>
+        </div>
+        <div class="col-md-2">
+          <select class="form-control" name="count_no" [(ngModel)]="countryCode" readonly>
+            <option value="">Select</option>
+            <option value="91" selected>+91</option>
+            <option value="1">+1</option>
+          </select>
+        </div>
+        <div class="col-md-7">
+          <input [(ngModel)]="phoneNo" readonly
+            type="text"
+            class="form-control"
+            name="phone_no"
+            placeholder="Mobile Number"
+          />
+         
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="status">Status</label>
+        </div>
+        <div class="col-md-9">
+          <select class="form-control" name="status" [(ngModel)]="status">
+            <option value="">Select</option>
+            <option value="PENDING">Pending</option>
+            <option value="IN_PROGRESS">In Progress</option>
+            <option value="COMPLETED">Completed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="state">Remarks</label>
+        </div>
+        <div class="col-md-9">
+          <textarea class="form-control" name="remarks" [(ngModel)]="remarks">
+          </textarea>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 text-center">
+      <button class="btn btn-success btn btn-md mt-2" (click)="submitData()"> Submit</button>
+    </div>
+  </form>
+  </div>
+</div>

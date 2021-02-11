@@ -1,0 +1,61 @@
+<div class="container-fluid align_center">
+  <div class="card">
+    <div class="card-header text-center"><h3>Login</h3></div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-12 loginformcontainer">
+          <form
+            [formGroup]="loginForm"
+            (ngSubmit)="login()"
+            class="login100-form login-form p-4"
+            id="loginForm"
+          >
+            <div class="form-group col-md-12">
+              <label>Email</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="emailId"
+                placeholder="Email"
+              />
+              <div *ngIf="loginForm.controls['emailId'].touched && loginForm.controls['emailId'].invalid" class="text-danger">
+                <div *ngIf="loginForm.controls['emailId'].errors.required">Email is required.</div>
+                <div *ngIf="loginForm.controls['emailId'].errors.pattern">Enter valid email id.</div>
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>Password</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                placeholder="Password"
+              />
+              <div *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid" class="text-danger">
+                <div *ngIf="loginForm.controls['password'].errors.required">Password is required.</div>
+              </div>
+            </div>
+            <div class="col-sm-12 aligncenter">
+              <div>
+                <button
+                  type="submit"
+                  class="btn btn-success mt-2"
+                  [disabled]="!loginForm.valid"
+                >
+                  Login
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-12 aligncenter">
+              <p class="last">
+                Don't have a account ?
+                <a href="/auth/register" style="color: blue"> Register</a>
+              </p>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+    </div>
+  </div>
+</div>

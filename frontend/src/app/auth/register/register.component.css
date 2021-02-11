@@ -1,0 +1,46 @@
+.form-group .error {
+  color: red;
+  font-size: 14px;
+  font-variant: small-caps;
+}
+.align_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8%;
+}
+.card {
+  border-radius: 5px;
+  width: 37rem;
+  height: 29rem;
+  background-position: center;
+}
+.text-white {
+  margin-top: 7%;
+  color: white;
+  font-size: 20px;
+}
+.inputmail {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+.aligncenter {
+  text-align: center;
+}
+.loginBtn {
+  width: 150px;
+  border-radius: 30px;
+  color: white;
+  background: #4653bc;
+}
+.last {
+  margin-top: 21px;
+  font-size: 13px;
+}
+.alignright {
+  text-align: right;
+}
+.loginheader {
+  text-align: center !important;
+}

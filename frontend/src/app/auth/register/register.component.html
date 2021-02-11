@@ -1,0 +1,72 @@
+<div class="container-fluid align_center">
+  <div class="card">
+    <div class="card-header text-center"><h3>Register</h3></div>
+    <div class="card-body">     
+      <div class="row">
+        <div class="col-sm-12 loginformcontainer">
+          <form
+            [formGroup]="signupForm"
+            (ngSubmit)="register()"
+            class="login100-form login-form p-4"
+          >
+            <div class="form-group col-md-12">
+              <label>Email</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="emailId"
+                placeholder="Email"
+              />
+              <div *ngIf="signupForm.controls['emailId'].touched && signupForm.controls['emailId'].invalid" class="text-danger">
+                <div *ngIf="signupForm.controls['emailId'].errors.required">Email is required.</div>
+                <div *ngIf="signupForm.controls['emailId'].errors.pattern">Enter valid email id.</div>
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>Password</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                placeholder="Password"
+              />
+              <div *ngIf="signupForm.controls['password'].touched && signupForm.controls['password'].invalid" class="text-danger">
+                <div *ngIf="signupForm.controls['password'].errors.required">Password is required.</div>
+              </div>
+            </div>
+            <div class="form-group col-md-12">
+              <label>Confirm Password</label>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="confirmPass"
+                placeholder="Confirm Password"
+              />
+              <div *ngIf="signupForm.controls['confirmPass'].touched && signupForm.controls['confirmPass'].invalid" class="text-danger">
+                <div *ngIf="signupForm.controls['confirmPass'].errors.required">Confirm password is required.</div>
+              </div>
+            </div>
+            <div class="col-sm-12 aligncenter">
+              <div>
+                <button
+                  type="submit"
+                  class="btn btn-success mt-2"
+                  [disabled]="!signupForm.valid"
+                >
+                  Login
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-12 aligncenter">
+              <p class="last">
+                Already Have an account ?
+                <a href="/auth/login" style="color: blue"> Sign Up</a>
+              </p>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
